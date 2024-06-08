@@ -9,14 +9,14 @@ export default function Create() {
     async function handleSubmit(event) {
         event.preventDefault()
 
-        const devmon = {
+        const celular = {
             nome: event.target.nome.value,
             imagem: event.target.imagem.value,
-            evoluiPara: event.target.evoluiPara.value
+            preco: event.target.preco.value
         }
-        const apiUrl = Api.personagem.create()
+        const apiUrl = Api.aparelho.create()
 
-        const response = await Api.buildApiPostRequest(apiUrl, devmon)
+        const response = await Api.buildApiPostRequest(apiUrl, celular)
 
         if(response.ok){
             toast.success('Celular adicionado com sucesso!')
@@ -40,8 +40,8 @@ export default function Create() {
                     <input type="text" id="imagem" name="imagem" placeholder="Insira a URL da imagem" />
                 </div>
                 <div>
-                    <label htmlFor="evoluiPara">Preço R$ (Opcional):</label> <br />
-                    <input type="text" id="evoluiPara" name="evoluiPara" placeholder="Insira o preço do aparelho" />
+                    <label htmlFor="preco">Preço R$ (Opcional):</label> <br />
+                    <input type="text" id="preco" name="preco" placeholder="Insira o preço do aparelho" />
                 </div>
 
                 <div>

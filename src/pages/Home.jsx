@@ -5,19 +5,19 @@ import Card from '../components/Card/Card'
 
 export default function Home() {
 
-    const [devmons, setDevmons] = useState([])
+    const [celulares, setCelulares] = useState([])
 
     async function fetchData() {
-        const apiUrl = Api.personagem.readAll()
+        const apiUrl = Api.aparelho.readAll()
 
         const response = await Api.buildApiGetRequest(apiUrl)
 
         if (response.ok) {
             const data = await response.json()
 
-            setDevmons(data)
+            setCelulares(data)
         } else {
-            toast.error('Erro ao carregar lista de celulares.')
+            toast.error('Erro ao carregar lista de Celulares.')
         }
     }
     useEffect(function () {
@@ -26,8 +26,8 @@ export default function Home() {
     return (
         <>
             <div className="cards">
-                {devmons.map(function (devmon) {
-                    return <Card key={devmon.nome} item={devmon} />
+                {celulares.map(function (celular) {
+                    return <Card key={celular.nome} item={celular} />
                 })}
             </div>
         </>

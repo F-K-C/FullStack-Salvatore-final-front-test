@@ -1,9 +1,9 @@
 export const Api = {
     baseUrl: 'https://backend-iniciante-integrar-com-frontend-qx8c.onrender.com/',
 
-    personagem: {
+    aparelho: {
         endpoint: function () {
-            return Api.baseUrl + 'personagem'
+            return Api.baseUrl + 'aparelho'
         },
         readAll: function () {
             return this.endpoint() + '/'
