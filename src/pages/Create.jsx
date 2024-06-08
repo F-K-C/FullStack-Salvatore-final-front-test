@@ -1,6 +1,7 @@
 import { toast } from "react-toastify"
 import { Api } from "../api/api"
 import { useNavigate } from "react-router-dom"
+import './Create.css'
 
 export default function Create() {
     const navigate = useNavigate()
@@ -18,33 +19,33 @@ export default function Create() {
         const response = await Api.buildApiPostRequest(apiUrl, devmon)
 
         if(response.ok){
-            toast.success('DevMon criado com sucesso!')
+            toast.success('Celular adicionado com sucesso!')
             navigate('/')
         }else{
             const body = await response.json()
-            toast.error('Erro ao criar DevMon: ' + body.error)
+            toast.error('Erro ao adicionar celular: ' + body.error)
         }
     }
 
     return (
         <div>
-            <h1>Criar DevMon</h1>
+            <h1> Adicionar Celular</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="nome">Nome*:</label> <br />
+                    <label htmlFor="nome">Nome do aparelho:</label> <br />
                     <input type="text" id="nome" name="nome" placeholder="Insira o nome" />
                 </div>
                 <div>
-                    <label htmlFor="imagem">Imagem (URL)*: </label> <br />
+                    <label htmlFor="imagem">Link da imagem (URL)*: </label> <br />
                     <input type="text" id="imagem" name="imagem" placeholder="Insira a URL da imagem" />
                 </div>
                 <div>
-                    <label htmlFor="evoluiPara">Evolui para (Opcional):</label> <br />
-                    <input type="text" id="evoluiPara" name="evoluiPara" placeholder="Insira o nome da evolução" />
+                    <label htmlFor="evoluiPara">Preço R$ (Opcional):</label> <br />
+                    <input type="text" id="evoluiPara" name="evoluiPara" placeholder="Insira o preço do aparelho" />
                 </div>
 
                 <div>
-                    <button type="submit">Criar</button>
+                    <button type="submit">Adicionar</button>
                     <button type="reset">Reiniciar</button>
                 </div>
             </form>

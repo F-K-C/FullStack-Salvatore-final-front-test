@@ -17,7 +17,7 @@ export default function Home() {
 
             setDevmons(data)
         } else {
-            toast.error('Erro ao carregar lista de DevMon.')
+            toast.error('Erro ao carregar lista de celulares.')
         }
     }
     useEffect(function () {
