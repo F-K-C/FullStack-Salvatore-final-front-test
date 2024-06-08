@@ -1,5 +1,5 @@
 export const Api = {
-    baseUrl: 'https://backend-iniciante-integrar-com-frontend-qx8c.onrender.com/',
+    baseUrl: 'https://fullstack-salvatore-final-back-test.onrender.com/',
 
     aparelho: {
         endpoint: function () {
